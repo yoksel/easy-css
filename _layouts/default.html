@@ -3,23 +3,23 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="page{% if page.id %} page--{{page.id}}{% endif %}">
 
     <div class="wrapper">
       {% include header.html %}
 
-      <div class="container">
+      <div class="site-content">
         <main class="main">
-          <div class="page-content">
-            {{ content }}
-          </div>
+          {{ content }}
         </main>
 
         <aside class="aside">
+          {% if page.links %}
           <nav class="page-nav">
             <div class="page-nav__title">На этой странице:</div>
             {% include page-nav.html list=page.links parent='page-nav' type='ol' %}
           </nav>
+          {% endif %}
 
           {% if page.additional_links %}
           <nav class="page-nav">
@@ -35,6 +35,7 @@
     </div>
 
     <script src="{{ "/assets/js/prism.js" | prepend: site.baseurl }}"></script>
+
   </body>
 
 </html>

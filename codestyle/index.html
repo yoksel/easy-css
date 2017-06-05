@@ -1,0 +1,114 @@
+---
+layout: page
+title: 'Стиль кода'
+permalink: /codestyle/
+
+---
+
+<ol>
+  <li>
+    <h3 id="order">Порядок свойств</h3>
+
+    <p>Свойства следует группировать по смыслу, и вот почему это важно:</p>
+
+    <ul class="compare">
+      <li class="compare__item compare__item--bad">
+        <h3 class="compare__title">Плохо</h3>
+{% highlight css %}
+.block {
+  margin-bottom: 50px;
+  padding: 20px;
+  vertical-align: middle;
+  color: teal;
+  line-height: 30px;
+  display: inline-block;
+  margin: 20px auto;
+  font: 16px/1.4 Arial,sans-serif;
+  float: left;
+  position: relative;
+}
+{% endhighlight %}
+      </li>
+      <li class="compare__item compare__item--good">
+        <h3 class="compare__title">Хорошо</h3>
+{% highlight css %}
+.block {
+  display: inline-block;  /* 💥 */
+  float: left;
+  position: relative;
+  margin-bottom: 50px;    /* 💥 */
+  margin: 20px auto;
+  padding: 20px;
+  vertical-align: middle; /* 💥 */
+  line-height: 30px;      /* 💥 */
+  font: 16px/1.4 Arial,sans-serif;
+  color: teal;
+}
+{% endhighlight %}
+      </li>
+    </ul>
+
+    <p>Если взять код слева и расставить в нём свойства по порядку (пример справа), сразу обнаруживается куча ошибок: <code>display: inline-block</code> не будет работать с <code>float: left</code>, потому что в этом случае элемент становится блочным. По этой же причине не будет работать <code>vertical-align</code>. <code>margin-bottom</code> не сработает, потому что ниже перезаписывается сокращенной записью свойства <code>margin</code>. <code>line-height</code> не работает, потому что перезапишется короткой записью <code>font</code>.</p>
+
+    <p>Достаточно сгрупировать свойства по смыслу, чтобы эти ошибки стали видны как на ладони, поэтому старайтесь всегда придерживаться определённого порядка свойств.</p>
+
+    <p>Порядок свойств можно подглядеть у <a href="http://html-academy.ru/codeguide/#css-order">HTML-Академии</a>. Для сортировки можно использовать <a href="http://csscomb.com/">CSScomb</a>, но лучше просто привыкнуть записывать свойства в определённой последовательности.</p>
+  </li>
+  <li>
+    <h3>Оформление кода</h3>
+
+    <p>Также при написании кода важно сохранять единый стиль, чтобы глаз не спотыкался о мелкие различия и легко читался.</p>
+
+    <p>Например, везде должны быть одинаковые отступы слева:</p>
+
+    <ul class="compare">
+      <li class="compare__item compare__item--bad">
+        <h3 class="compare__title">Плохо</h3>
+{% highlight css %}
+.block {
+  padding: 20px;
+  font: 16px/1.4 Arial, sans-serif;
+   color: teal;
+}
+{% endhighlight %}
+      </li>
+      <li class="compare__item compare__item--good">
+        <h3 class="compare__title">Хорошо</h3>
+{% highlight css %}
+.block {
+  padding: 20px;
+  font: 16px/1.4 Arial, sans-serif;
+  color: teal;
+}
+{% endhighlight %}
+      </li>
+    </ul>
+
+    <p>И не забывайте пробелы после фигурных скобок, двоеточий и запятых:</p>
+
+    <ul class="compare">
+      <li class="compare__item compare__item--bad">
+        <h3 class="compare__title">Плохо</h3>
+{% highlight css %}
+.block{
+  padding:20px;
+  font:16px/1.4 Arial,sans-serif;
+  color: teal;
+}
+{% endhighlight %}
+      </li>
+      <li class="compare__item compare__item--good">
+        <h3 class="compare__title">Хорошо</h3>
+{% highlight css %}
+.block {
+  padding: 20px;
+  font: 16px/1.4 Arial, sans-serif;
+  color: teal;
+}
+{% endhighlight %}
+      </li>
+    </ul>
+
+    <p>Для проверки форматирования кода можно использовать <a href="http://yoksel.github.io/easy-markup/check-code/#check-css">stylelint</a>.</p>
+  </li>
+</ol>
