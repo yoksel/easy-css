@@ -3,6 +3,11 @@ layout: page
 title: 'Стиль кода'
 permalink: /codestyle/
 
+links:
+ — name: 'Порядок свойств'
+   url: '#order'
+ — name: 'Оформление кода'
+   url: '#codestyle'
 ---
 
 <ol>
@@ -13,7 +18,7 @@ permalink: /codestyle/
 
     <ul class="compare">
       <li class="compare__item compare__item--bad">
-        <h3 class="compare__title">Плохо</h3>
+        <h4 class="compare__title">Плохо</h4>
 {% highlight css %}
 .block {
   margin-bottom: 50px;
@@ -30,7 +35,7 @@ permalink: /codestyle/
 {% endhighlight %}
       </li>
       <li class="compare__item compare__item--good">
-        <h3 class="compare__title">Хорошо</h3>
+        <h4 class="compare__title">Хорошо</h4>
 {% highlight css %}
 .block {
   display: inline-block;  /* 💥 */
@@ -55,7 +60,7 @@ permalink: /codestyle/
     <p>Порядок свойств можно подглядеть у <a href="http://html-academy.ru/codeguide/#css-order">HTML-Академии</a>. Для сортировки можно использовать <a href="http://csscomb.com/">CSScomb</a>, но лучше просто привыкнуть записывать свойства в определённой последовательности.</p>
   </li>
   <li>
-    <h3>Оформление кода</h3>
+    <h3 id="codestyle">Оформление кода</h3>
 
     <p>При написании кода важно сохранять единый стиль, чтобы глаз не спотыкался о мелкие различия и легко читался.</p>
 
@@ -63,7 +68,7 @@ permalink: /codestyle/
 
     <ul class="compare">
       <li class="compare__item compare__item--bad">
-        <h3 class="compare__title">Плохо</h3>
+        <h4 class="compare__title">Плохо</h4>
 {% highlight css %}
 .block {
   padding: 20px;
@@ -73,7 +78,7 @@ permalink: /codestyle/
 {% endhighlight %}
       </li>
       <li class="compare__item compare__item--good">
-        <h3 class="compare__title">Хорошо</h3>
+        <h4 class="compare__title">Хорошо</h4>
 {% highlight css %}
 .block {
   padding: 20px;
@@ -88,7 +93,7 @@ permalink: /codestyle/
 
     <ul class="compare">
       <li class="compare__item compare__item--bad">
-        <h3 class="compare__title">Плохо</h3>
+        <h4 class="compare__title">Плохо</h4>
 {% highlight css %}
 .block{
   padding:20px;
@@ -98,7 +103,7 @@ permalink: /codestyle/
 {% endhighlight %}
       </li>
       <li class="compare__item compare__item--good">
-        <h3 class="compare__title">Хорошо</h3>
+        <h4 class="compare__title">Хорошо</h4>
 {% highlight css %}
 .block {
   padding: 20px;
