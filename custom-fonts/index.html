@@ -1,0 +1,122 @@
+---
+layout: page
+title: 'Кастомные шрифты'
+permalink: /custom-fonts/
+
+links:
+ - name: 'Подключение'
+   url: '#font-face'
+ - name: 'Различные начертания'
+   url: '#font-weight'
+ - name: 'Наследование стилей текста'
+   url: '#inheritance'
+---
+
+<ol>
+  <li>
+    <h3 id="font-face">Подключение</h3>
+
+    <p>Кастомный шрифт на страницу можно подключить примерно таким кодом:</p>
+
+{% highlight css %}
+@font-face {
+  font-family: 'My Font';
+  src: url('../myfont.woff2') format('woff2'),
+       url('../myfont.woff') format('woff');
+}
+{% endhighlight %}
+
+    <p>Формат woff поддерживается <a href="http://caniuse.com/#search=woff">всеми современными браузерами</a>. Шрифты в формате woff2 весят меньше, но с поддержкой у них <a href="http://caniuse.com/#feat=woff2">пока не очень</a>, поэтому нужно указывать оба формата, чтобы браузер сам выбрал тот, который он понимает.</p>
+
+    <p>Порядок перечисления форматов тоже имеет значение: если браузер поддерживает woff2, но первым в списке будет woff, браузер использует woff и не будет искать дальше. Чтобы браузер с поддержкой woff2 смог выбрать нужный формат, woff2 должен идти в списке первым.</p>
+  </li>
+
+  <li>
+    <h3 id="font-weight">Различные начертания</h3>
+
+    <p>Если у шрифта несколько начертаний (например, обычное, полужирное, лёгкое), можно подключить их с разными названиями и каждый раз руками прописывать какой именно шрифт использовать, не забывая указывать запасные шрифты.</p>
+
+    <p>Есть вариант получше: все варианты шрифта задаются с одним названием, но с разной жирностью. После этого для того, чтобы использовать нужное начертание, достаточно будет указать нужную жирность:</p>
+
+    <ul class="compare">
+      <li class="compare__item compare__item--bad">
+        <h4 class="compare__title">Плохо</h4>
+{% highlight css %}
+/* подключение */
+@font-face {
+  font-family: 'My Font';
+  src: url('../myfont.woff2') format('woff2'),
+       url('../myfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'My Font Light';
+  src: url('../myfontLight.woff2') format('woff2'),
+       url('../myfontLight.woff') format('woff');
+}
+@font-face {
+  font-family: 'My Font Bold';
+  src: url('../myfontBold.woff2') format('woff2'),
+       url('../myfontBold.woff') format('woff');
+}
+
+/* использование */
+BODY {
+  font-family: 'My Font', Arial, sans-serif;
+}
+.page__title {
+  font-family: 'My Font Bold', Arial, sans-serif;
+}
+.page__slogan {
+  font-family: 'My Font Light', Arial, sans-serif;
+}
+{% endhighlight %}
+      </li>
+      <li class="compare__item compare__item--good">
+        <h4 class="compare__title">Хорошо</h4>
+{% highlight css %}
+/* подключение */
+@font-face {
+  font-family: 'My Font';
+  src: url('../myfont.woff2') format('woff2'),
+       url('../myfont.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'My Font';
+  src: url('../myfontLight.woff2') format('woff2'),
+       url('../myfontLight.woff') format('woff');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'My Font';
+  src: url('../myfontBold.woff2') format('woff2'),
+       url('../myfontBold.woff') format('woff');
+  font-weight: 700;
+}
+
+/* использование */
+BODY {
+  font-family: 'My Font', Arial, sans-serif;
+}
+.page__title {
+  font-weight: 700;
+}
+.page__slogan {
+  font-weight: 100;
+}
+{% endhighlight %}
+
+      </li>
+    </ul>
+
+  </li>
+
+  </li>
+    <li>
+      <h3 id="inheritance">Наследование стилей текста</h3>
+
+      <p>В отличие от многих других свойств, стили текста, заданные родительскому элементу, наследуются дочерними. Это означает, что не нужно каждому элементу руками указывать нужный шрифт, если он уже задан родителю.</p>
+
+      <p>Обычно основной шрифт задаётся в <code>body</code>, и почти все элементы страницы автоматически его наследуют. Исключение составляют элементы формы: <code>input</code>, <code>textarea</code>, <code>select</code> и <code>button</code> — браузер старается привести их шрифт к системному. Чтобы эти элементы тоже наследовали свойства текста, нужно прописать в стилях <code>font: inherit</code>. Если нужно унаследовать только шрифт, будет достаточно <code>font-family: inherit</code>.</p>
+  </li>
+</ol>

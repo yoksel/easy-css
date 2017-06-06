@@ -29,7 +29,9 @@ menu:
    url: '/selectors/'
  - name: 'Препроцессоры'
    url: '/preprocessors/'
- 
+ - name: 'Кастомные шрифты'
+   url: '/custom-fonts/'
+
 socials:
  - name: '@yoksel'
    url: 'https://twitter.com/yoksel'
