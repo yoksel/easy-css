@@ -1,4 +1,4 @@
-# Подсказки по разметке HTML-документа
+# Подсказки по написанию CSS
 
-http://yoksel.github.io/easy-markup
+https://yoksel.github.io/easy-css/
 
