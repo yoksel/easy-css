@@ -33,6 +33,8 @@ menu:
    url: '/custom-fonts/'
  - name: 'Инструменты'
    url: '/tools/'
+ - name: 'Короткая запись свойств'
+   url: '/shorthand-properties/'
 
 socials:
  - name: '@yoksel'
