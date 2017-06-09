@@ -1,0 +1,101 @@
+---
+layout: page
+title: 'Инструменты'
+permalink: /tools/
+
+links:
+ - url: '#emmet'
+   name: 'Emmet'
+ - url: '#preprocessors'
+   name: 'Sass, Less, Stylus'
+ - url: '#autoprefixer'
+   name: 'Autoprefixer'
+ - url: '#check-css'
+   name: 'CSS syntax validator'
+ - url: '#check-format'
+   name: 'The stylelint CLI'
+---
+
+<ol>
+  <li>
+    <h3>Написание кода</h3>
+
+    <ol>
+      <li>
+        <h4 id="emmet"><a href="https://emmet.io/">Emmet</a></h4>
+
+        <p>Это инструмент, позволяющий писать CSS со скоростью мысли. По сути, это просто набор сниппетов, сокращений, которые по табу разворачиваются в HTML-разметку или CSS-свойства.</p>
+
+        <p>Например, в CSS-файле можно написать <code>db</code>, нажать Tab и получить <code>display: block</code>, а из <code>p20</code> — <code>padding: 20px;</code>; <code>bgi</code> развернётся в <code>background-image: url();</code>, а <code>bz</code> — в <code>box-sizing: border-box;</code>. И таких комбинаций огромное множество.</p>
+
+        <p>Подобным образом это работает для HTML: <code>.page</code> развернётся в <code>&lt;div class="page">&lt;/div></code>, а <code>ul>li*3</code> — в ненумерованный список из трёх пунктов.</p>
+
+        <p>Примеры сокращений можно найти <a href="https://docs.emmet.io/">в документации</a>, но заучивать их совершенно необязательно: просто представьте как бы вы сократили нужное вам свойство — скорее всего, именно такое сокращение и сработает.</p>
+
+        <p>Также Emmet позволяет менять числовые с шагом 1 или 10, значения зажав <code>Alt</code> или <code>Shift</code> (зависит от настроек плагина). Это быстрее и удобнее чем редактировать числа руками.</p>
+
+        <p>В некоторых редакторах Emmet есть по умолчанию, в другие потребуется поставить плагин, но в любом случае этот инструмент должен у вас быть, если вы не хотите тратить львиную долю времени на набирание кода руками.</p>
+
+        <p>Для Sublime Text есть аналогичный инструмент — <a href="http://hayakubundle.com/">Hayaku</a> он работает умнее и лучше, но, к сожалению, он только для Sublime, и в данный момент проект не развивается.</p>
+      </li>
+
+      <li>
+        <h4 id="preprocessors"><a href="http://sass-lang.com/">Sass</a>, <a href="http://lesscss.org/">Less</a>, <a href="http://stylus-lang.com/">Stylus</a></h4>
+
+        <p>Используйте возможности препроцессоров, чтобы писать код аккуратнее и быстрее. Рекомендации по использованию <a href="/easy-css/preprocessors/">можно почитать тут</a>.</p>
+      </li>
+
+      <li>
+        <h4 id="autoprefixer"><a href="https://github.com/postcss/autoprefixer">Autoprefixer</a></h4>
+
+        <p>Как можно догадаться из названия, этот инструмент избавит вас от небходимости писать префиксы: он разбирает ваш CSS-код и добавляет в него префиксы, основываясь на данных с <a href="http://caniuse.com/">CanIUse</a>. </p>
+
+        <p>Обычно используется в виде плагина, подключаемого в Gulp или Grunt-файл, также он, как правило, есть в онлайн-песочницах, так что про добавление префиксов вручную можно забыть как про страшный сон.</p>
+      </li>
+    </ol>
+  </li>
+
+  <li>
+    <h3>Проверка кода</h3>
+
+    <ol>
+      <li>
+        <h4 id="check-css"><a href="https://csstree.github.io/docs/validator.html">CSS syntax validator</a></h4>
+
+        <p>Онлайн-инструмент для валидации CSS. На вход принимает только CSS (не Less, не Sass).</p>
+      </li>
+      <li>
+        <h4 id="check-format"><a href="https://github.com/stylelint/stylelint/blob/master/docs/user-guide/cli.md">The stylelint CLI</a></h4>
+
+        <p>Инструмент для проверки форматирования и не только: он также может проверить код на использование Id, дублирование правил, конфликты свойств и перезапись одних свойств другими.</p>
+
+        <p>Установка:</p>
+
+{% highlight js %}
+npm install -g stylelint
+{% endhighlight %}
+
+        <p>Также нужен файл с правилами проверки стилей. Можно взять <a href="https://raw.githubusercontent.com/yoksel/easy-markup/gh-pages/.stylelintrc">мой набор правил</a>, или накликать свой используя <a href="https://maximgatilin.github.io/stylelint-config/">Stylelint Config Generator</a>.</p>
+
+        <p>Список правил сохраните в корне проекта в файл с названием <code>.stylelintrc</code> (без расширения).</p>
+
+        <p>Файл с правилами можно редактировать под ваши нужды, узнать больше о правилах <a href="https://github.com/stylelint/stylelint/blob/master/docs/user-guide/rules.md">можно здесь</a>.</p>
+
+        <p>Использование:</p>
+
+          <b>SASS:</b>
+{% highlight js %}
+stylelint "sass/**/*.scss"
+{% endhighlight %}
+
+          <b>LESS:</b>
+{% highlight js %}
+stylelint "less/**/*.less"
+{% endhighlight %}
+
+        <p>Команда запускается в папке проекта.</p>
+
+      </li>
+    </ol>
+  </li>
+</ol>
