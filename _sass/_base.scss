@@ -193,3 +193,19 @@ OL > LI {
 .tip {
   font-style: italic;
 }
+
+
+/* Relative Project Link
+--------------------------------------------- */
+.related-project-link {
+  position: relative;
+  display: inline-block;
+  margin-left: 1.5em;
+  margin-top: 1rem;
+
+  &::before {
+    content: '\1F4D6';
+    position: absolute;
+    left: -1.5em;
+  }
+}

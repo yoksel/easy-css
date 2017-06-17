@@ -14,6 +14,11 @@
         </main>
 
         <aside class="aside">
+
+          {% if page.id=='index' %}
+          <a class="related-project-link" href="http://yoksel.github.io/easy-markup/">Простые правила разметки</a>
+          {% endif %}
+
           {% if page.links %}
           <nav class="page-nav">
             <div class="page-nav__title">На этой странице:</div>
