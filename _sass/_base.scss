@@ -194,14 +194,22 @@ OL > LI {
   font-style: italic;
 }
 
-
 /* Relative Project Link
 --------------------------------------------- */
-.related-project-link {
+
+.related-project {
+  display: block;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  border: 3px solid #EEE;
+  text-align: center;
+}
+.related-project__text {
   position: relative;
   display: inline-block;
   margin-left: 1.5em;
-  margin-top: 1rem;
 
   &::before {
     content: '\1F4D6';
