@@ -33,7 +33,7 @@ menu:
    url: '/custom-fonts/'
  - name: 'Препроцессоры'
    url: '/preprocessors/'
-- name: 'Инструменты'
+ - name: 'Инструменты'
    url: '/tools/'
 
 socials:
