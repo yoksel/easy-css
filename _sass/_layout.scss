@@ -23,6 +23,16 @@
   .aside {
     margin-bottom: 2rem;
   }
+
+  .page--index {
+    .main {
+      order: 0;
+      margin-bottom: 2rem;
+    }
+    .aside {
+      margin-bottom: 0;
+    }
+  }
 }
 
 @media (min-width: 1000px) {
