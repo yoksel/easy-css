@@ -18,12 +18,11 @@ links:
 
     <p>Кастомный шрифт на страницу можно подключить примерно таким кодом:</p>
 
-<figure class="highlight">
-<pre class="language-css"><code class="language-css">@font-face {
+{% highlight css %}@font-face {
   font-family: 'My Font';
   src: url('../myfont.woff2') format('woff2'),
        url('../myfont.woff') format('woff');
-}</pre></code></figure>
+}{% endhighlight %}
 
     <p>Формат woff поддерживается <a href="http://caniuse.com/#search=woff">всеми современными браузерами</a>. Шрифты в формате woff2 весят меньше, но с поддержкой у них <a href="http://caniuse.com/#feat=woff2">пока не очень</a>, поэтому нужно указывать оба формата, чтобы браузер сам выбрал тот, который он понимает.</p>
 
@@ -40,8 +39,7 @@ links:
     <ul class="compare">
       <li class="compare__item compare__item--bad">
         <h4 class="compare__title">Плохо</h4>
-<figure class="highlight">
-<pre class="language-css"><code class="language-css">/* подключение */
+{% highlight css %}/* подключение */
 @font-face {
   font-family: 'My Font';
   src: url('../myfont.woff2') format('woff2'),
@@ -67,12 +65,11 @@ BODY {
 }
 .page__slogan {
   font-family: 'My Font Light', Arial, sans-serif;
-}</pre></code></figure>
+}{% endhighlight %}
       </li>
       <li class="compare__item compare__item--good">
         <h4 class="compare__title">Хорошо</h4>
-<figure class="highlight">
-<pre class="language-css"><code class="language-css">/* подключение */
+{% highlight css %}/* подключение */
 @font-face {
   font-family: 'My Font';
   src: url('../myfont.woff2') format('woff2'),
@@ -101,7 +98,7 @@ BODY {
 }
 .page__slogan {
   font-weight: 100;
-}</pre></code></figure>
+}{% endhighlight %}
 
       </li>
     </ul>
