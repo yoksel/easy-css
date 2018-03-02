@@ -58,6 +58,14 @@ menu:
  - name: 'Инструменты'
    url: '/tools/'
 
+projects:
+ - name: 'Простые правила разметки'
+   url: 'https://yoksel.github.io/easy-markup/'
+ - name: 'Простой CSS'
+   url: '/'
+ - name: 'HTML & CSS: как не надо'
+   url: 'https://yoksel.github.io/bad-practices/'
+
 socials:
  - name: '@yoksel'
    url: 'https://twitter.com/yoksel'
